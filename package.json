@@ -1,0 +1,24 @@
+{
+  "name": "postman-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gokul87/postman-api.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gokul87/postman-api/issues"
+  },
+  "homepage": "https://github.com/gokul87/postman-api#readme",
+  "devDependencies": {
+    "faker": "^4.1.0",
+    "json-server": "^0.11.2",
+    "newman": "^3.7.5"
+  }
+}

@@ -1,0 +1,228 @@
+{
+	"variables": [],
+	"info": {
+		"name": "demoApiTesting",
+		"_postman_id": "a831403a-51fa-da58-1b18-38fef13916ab",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Add a User",
+			"description": "This folder contains a collection of requests which perform POST actions",
+			"item": [
+				{
+					"name": "Create a post",
+					"request": {
+						"url": "http://localhost:3000/personal",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"firstname\": \"Gokul\",\n        \"secondname\": \"Sridharan\",\n        \"city\": \"London\",\n        \"search\": {\n            \"Housetype\": \"independent\",\n            \"location\": \"London\",\n            \"min value\": 29033,\n            \"max value\": 90017,\n            \"date\": \"2016-09-24T07:15:17.729Z\"\n        }\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Get User Details",
+			"description": "This folder contains collection of get requests for facebook's graph api ",
+			"item": [
+				{
+					"name": "Fetch list of people",
+					"request": {
+						"url": "http://localhost:3000/personal",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Fetch first 5 users",
+					"request": {
+						"url": {
+							"raw": "http://localhost:3000/personal?_limit=5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"personal"
+							],
+							"query": [
+								{
+									"key": "_limit",
+									"value": "5",
+									"equals": true,
+									"description": ""
+								}
+							],
+							"variable": []
+						},
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Fetch list in descending order",
+					"request": {
+						"url": {
+							"raw": "http://localhost:3000/personal?_sort=id&_order=DESC",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"personal"
+							],
+							"query": [
+								{
+									"key": "_sort",
+									"value": "id",
+									"equals": true,
+									"description": ""
+								},
+								{
+									"key": "_order",
+									"value": "DESC",
+									"equals": true,
+									"description": ""
+								}
+							],
+							"variable": []
+						},
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Fetch users between id 10 and 20",
+					"request": {
+						"url": {
+							"raw": "localhost:3000/personal?id_gte=10&id_lte=20",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"personal"
+							],
+							"query": [
+								{
+									"key": "id_gte",
+									"value": "10",
+									"equals": true,
+									"description": ""
+								},
+								{
+									"key": "id_lte",
+									"value": "20",
+									"equals": true,
+									"description": ""
+								}
+							],
+							"variable": []
+						},
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Search for a user",
+					"request": {
+						"url": {
+							"raw": "http://localhost:3000/personal?q=gokul",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"personal"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "gokul",
+									"equals": true,
+									"description": ""
+								}
+							],
+							"variable": []
+						},
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Patch User Details",
+			"description": "",
+			"item": [
+				{
+					"name": "Update user details",
+					"request": {
+						"url": "http://localhost:3000/personal/51",
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\": 51,\n    \"city\": \"Uk\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ZDelete User Details",
+			"description": "This folder contains collection of requests which performs delete action ",
+			"item": [
+				{
+					"name": "Delete a user",
+					"request": {
+						"url": "http://localhost:3000/personal/51",
+						"method": "DELETE",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
